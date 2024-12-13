@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Your Story - Dynamic Storyteller</title>
+</head>
+
+<body>
+    <h1>Your Adventure Story</h1>
+    <p>{{ story }}</p>
+    <audio controls>
+        <source src="{{ audio_file }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br><br>
+    <a href="{{ url_for('story_start') }}">Create Another Story</a>
+</body>
+
+</html>

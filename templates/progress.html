@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Story Continues - Dynamic Storyteller</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .story {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .story-so-far {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .next-part {
+            padding: 1.5rem;
+            background: #e8f0fe;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #2563eb;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: 500;
+            color: #4a4a4a;
+        }
+
+        select {
+            padding: 0.75rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        select:hover {
+            border-color: #999;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Adventure Continues</h1>
+        <div class="story">
+            <div class="story-so-far">
+                {{ story_so_far }}
+            </div>
+            <div class="next-part">
+                {{ next_part }}
+            </div>
+        </div>
+        <form method="POST">
+            <label for="choice">What happens next?</label>
+            <select name="choice" id="choice">
+                <option value="They bravely moved forward.">Move forward bravely</option>
+                <option value="They decided to find another way.">Find another way</option>
+                <option value="They called for help.">Call for help</option>
+            </select>
+            <button type="submit">Continue Story</button>
+        </form>
+    </div>
+</body>
+
+</html>
